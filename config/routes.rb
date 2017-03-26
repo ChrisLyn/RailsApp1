@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   root to: "people#index"
   
-  get 'people/index'
+  get 'people/index' => 'people#index'
 
-  get 'people/new'
+  get 'people/new' => 'people#new'
 
   get 'people/create'
 
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'people/update'
 
   get 'people/destroy'
+
+  get "dashboard/:page" => "dashboard#show"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
